@@ -1,0 +1,30 @@
+if command -v mise &> /dev/null; then
+  znap eval "$(mise activate bash)"
+fi
+
+if command -v zoxide &> /dev/null; then
+  znap eval "$(zoxide init bash)"
+fi
+
+if command -v fzf &> /dev/null; then
+  znap source <(fzf --zsh)
+fi
+
+# Download fzf-tab, if it's not there yet.
+[[ -r $OMAKUB_MAC_ZSH_PLUGINS_PATH/fzf-tab/fzf-tab.plugin.zsh ]] ||
+    git clone https://github.com/Aloxaf/fzf-tab.git $OMAKUB_MAC_ZSH_PLUGINS_PATH/fzf-tab
+# Load fzf-tab
+znap source $OMAKUB_MAC_ZSH_PLUGINS_PATH/fzf-tab/fzf-tab.plugin.zsh
+
+# Download zsh-vi-mode, if it's not there yet.
+[[ -r $OMAKUB_MAC_ZSH_PLUGINS_PATH/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]] ||
+    git clone https://github.com/jeffreytse/zsh-vi-mode.git $OMAKUB_MAC_ZSH_PLUGINS_PATH/zsh-vi-mode
+# Load zsh-vi-mode
+znap source $OMAKUB_MAC_ZSH_PLUGINS_PATH/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+
+# Download fast-syntax-highlighting, if it's not there yet.
+[[ -r $OMAKUB_MAC_ZSH_PLUGINS_PATH/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]] ||
+    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git $OMAKUB_MAC_ZSH_PLUGINS_PATH/fast-syntax-highlighting
+# Load fast-syntax-highlighting
+znap source $OMAKUB_MAC_ZSH_PLUGINS_PATH/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh

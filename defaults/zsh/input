@@ -1,0 +1,62 @@
+# Enable extended globbing and other enhancements
+setopt EXTENDED_GLOB
+setopt NO_CASE_GLOB       # Case-insensitive globbing
+setopt LIST_TYPES         # Show file type indicators like ls -F
+
+# Ignore case during completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}'
+
+# Control completion behavior
+setopt AUTO_LIST          # Automatically list choices on ambiguous completion
+
+# Set the threshold for listing completions without confirmation
+zstyle ':completion:*' list-max 200
+
+# Disable paging of completion listings
+zstyle ':completion:*' use-pager no
+
+# Show extra file information when completing
+setopt LIST_TYPES
+
+# Append a trailing slash when autocompleting symlinked directories
+zstyle ':completion:*' mark-symlinked-directories yes
+
+# Do not autocomplete hidden files unless pattern starts with a dot
+zstyle ':completion:*' ignore-hidden yes
+
+# Make moving word by word behave like in bash
+autoload -U select-word-style
+select-word-style bash
+
+# Enable colored completion listings
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+
+# set descriptions format to enable group support
+# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
+zstyle ':completion:*:descriptions' format '[%d]'
+
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':completion:*' menu no
+
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+
+# custom fzf flags
+# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
+zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
+
+# To make fzf-tab follow FZF_DEFAULT_OPTS.
+# NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fzf-tab#455.
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+
+# switch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
+
+# Be more intelligent with autocompletion (skip completed text)
+setopt COMPLETE_IN_WORD
+
+# Ensure proper encoding (UTF-8) support
+export LANG=en_US.UTF-8

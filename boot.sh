@@ -11,20 +11,30 @@ ascii_art='________                  __        ___.
 '
 
 echo -e "$ascii_art"
-echo "=> Omakub is for fresh Ubuntu 24.04+ installations only!"
+echo "=> Omakub-mac is for fresh macOS installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
-sudo apt-get update >/dev/null
-sudo apt-get install -y git >/dev/null
+# Install Xcode Command Line Tools
+xcode-select --install
 
-echo "Cloning Omakub..."
-rm -rf ~/.local/share/omakub
-git clone https://github.com/basecamp/omakub.git ~/.local/share/omakub >/dev/null
-if [[ $OMAKUB_REF != "master" ]]; then
-	cd ~/.local/share/omakub
-	git fetch origin "${OMAKUB_REF:-stable}" && git checkout "${OMAKUB_REF:-stable}"
+# Install brew if not already installed
+if ! command -v brew &>/dev/null; then
+	echo "Installing Homebrew..."
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+brew update >/dev/null
+
+# Needed for all installers
+brew install curl git unzip wget >/dev/null
+
+echo "Cloning Omakub-mac..."
+rm -rf ~/.local/share/omakub-mac
+git clone https://github.com/tomu123/omakub-mac.git ~/.local/share/omakub-mac >/dev/null
+if [[ $OMAKUB_MAC_REF != "master" ]]; then
+	cd ~/.local/share/omakub-mac
+	git fetch origin "${OMAKUB_MAC_REF:-stable}" && git checkout "${OMAKUB_MAC_REF:-stable}"
 	cd -
 fi
 
 echo "Installation starting..."
-source ~/.local/share/omakub/install.sh
+source ~/.local/share/omakub-mac/install.sh

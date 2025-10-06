@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Install default programming languages
-if [[ -v OMAKUB_FIRST_RUN_LANGUAGES ]]; then
-  languages=$OMAKUB_FIRST_RUN_LANGUAGES
+if [[ -v OMAKUB_MAC_FIRST_RUN_LANGUAGES ]]; then
+  languages=$OMAKUB_MAC_FIRST_RUN_LANGUAGES
 else
-  AVAILABLE_LANGUAGES=("Ruby on Rails" "Node.js" "Go" "PHP" "Python" "Elixir" "Rust" "Java")
+  AVAILABLE_LANGUAGES=("Ruby on Rails" "Node.js" "Go" "Python" "Elixir" "Rust" "Java")
   languages=$(gum choose "${AVAILABLE_LANGUAGES[@]}" --no-limit --height 10 --header "Select programming languages")
 fi
 
@@ -22,12 +22,6 @@ if [[ -n "$languages" ]]; then
     Go)
       mise use --global go@latest
       ;;
-    PHP)
-      sudo apt -y install php php-{curl,apcu,intl,mbstring,opcache,pgsql,mysql,sqlite3,redis,xml,zip} --no-install-recommends
-      php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-      php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
-      rm composer-setup.php
-      ;;
     Python)
       mise use --global python@latest
       ;;
@@ -37,7 +31,7 @@ if [[ -n "$languages" ]]; then
       mise x elixir -- mix local.hex --force
       ;;
     Rust)
-      bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)" -- -y
+      /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)" -- -y
       ;;
     Java)
       mise use --global java@latest

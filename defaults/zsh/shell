@@ -1,0 +1,32 @@
+# History control
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+HISTSIZE=32768
+SAVEHIST="${HISTSIZE}"
+
+# Set complete path
+export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omakub-mac/bin:$PATH"
+set +h
+
+export OMAKUB_MAC_PATH="$HOME/.local/share/omakub-mac"
+export OMAKUB_MAC_ZSH_PLUGINS_PATH="$HOME/.local/share/zsh-plugins"
+
+# Download zsh-completions, if it's not there yet.
+[[ -d $OMAKUB_MAC_ZSH_PLUGINS_PATH/zsh-completions ]] ||
+    git clone https://github.com/zsh-users/zsh-completions.git $OMAKUB_MAC_ZSH_PLUGINS_PATH/zsh-completions
+# Load zsh-completions
+if [[ ${fpath[(Ie)$OMAKUB_MAC_ZSH_PLUGINS_PATH/zsh-completions/src]} -eq 0 ]]; then
+  fpath=($OMAKUB_MAC_ZSH_PLUGINS_PATH/zsh-completions/src $fpath)
+fi
+
+# Download Znap, if it's not there yet.
+[[ -r $OMAKUB_MAC_ZSH_PLUGINS_PATH/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git $OMAKUB_MAC_ZSH_PLUGINS_PATH/znap
+# Start Znap
+if type znap &>/dev/null; then
+  znap source $OMAKUB_MAC_ZSH_PLUGINS_PATH/znap/znap.zsh
+else
+  source $OMAKUB_MAC_ZSH_PLUGINS_PATH/znap/znap.zsh
+fi
