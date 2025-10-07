@@ -3,7 +3,7 @@
 # Needed for all installers
 brew update
 brew upgrade
-brew install curl git unzip wget
+brew install curl git unzip wget unar
 
 # Configure the zsh shell using Omakub-mac defaults
 [[ -f ~/.zshrc ]] && mv ~/.zshrc ~/.zshrc.bak
