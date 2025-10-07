@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 brew install \
   pkgconf autoconf bison \

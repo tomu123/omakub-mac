@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Install default programming languages
 if [[ -v OMAKUB_MAC_FIRST_RUN_LANGUAGES ]]; then

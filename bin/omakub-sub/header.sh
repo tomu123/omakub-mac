@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 source $OMAKUB_MAC_PATH/ascii.sh
 echo "" # Add spacing

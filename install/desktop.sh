@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Run desktop installers
 for installer in ~/.local/share/omakub-mac/install/desktop/*.sh; do source $installer; done

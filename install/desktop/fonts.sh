@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 mkdir -p ~/Library/Fonts
 brew install fontconfig

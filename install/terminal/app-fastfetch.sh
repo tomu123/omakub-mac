@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Display system information in the terminal
 brew install fastfetch

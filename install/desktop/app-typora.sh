@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Install with brew
 brew install --cask typora

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 AVAILABLE_LANGUAGES=("Ruby on Rails" "Node.js" "Go" "Python" "Elixir" "Rust" "Java")
 SELECTED_LANGUAGES="Ruby on Rails","Node.js"

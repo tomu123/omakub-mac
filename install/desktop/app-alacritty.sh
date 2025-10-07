@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Alacritty is a GPU-powered and highly extensible terminal. See https://alacritty.org/
 brew install --cask alacritty

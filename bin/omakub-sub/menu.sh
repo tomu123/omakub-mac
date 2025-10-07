@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 if [ $# -eq 0 ]; then
 	SUB=$(gum choose "Theme" "Font" "Quit" --height 10 --header "" | tr '[:upper:]' '[:lower:]')

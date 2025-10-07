@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Install default databases
 if [[ -v OMAKUB_MAC_FIRST_RUN_DBS ]]; then

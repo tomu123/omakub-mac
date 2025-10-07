@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 source $OMAKUB_MAC_PATH/bin/omakub-mac-sub/header.sh
 source $OMAKUB_MAC_PATH/bin/omakub-mac-sub/menu.sh

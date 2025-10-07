@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 ascii_art='
 ________                  __        ___.
