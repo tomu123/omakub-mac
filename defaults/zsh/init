@@ -1,9 +1,9 @@
 if command -v mise &> /dev/null; then
-  znap eval "$(mise activate bash)"
+  znap eval mise "$(mise activate bash)"
 fi
 
 if command -v zoxide &> /dev/null; then
-  znap eval "$(zoxide init bash)"
+  znap eval zoxide "$(zoxide init bash)"
 fi
 
 if command -v fzf &> /dev/null; then

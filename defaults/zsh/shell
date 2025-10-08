@@ -25,8 +25,4 @@ fi
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git $OMAKUB_MAC_ZSH_PLUGINS_PATH/znap
 # Start Znap
-if type znap &>/dev/null; then
-  znap source $OMAKUB_MAC_ZSH_PLUGINS_PATH/znap/znap.zsh
-else
-  source $OMAKUB_MAC_ZSH_PLUGINS_PATH/znap/znap.zsh
-fi
+source $OMAKUB_MAC_ZSH_PLUGINS_PATH/znap/znap.zsh
