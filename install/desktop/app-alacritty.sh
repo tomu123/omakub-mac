@@ -2,6 +2,7 @@
 
 # Alacritty is a GPU-powered and highly extensible terminal. See https://alacritty.org/
 brew install --cask alacritty
+xattr -dr com.apple.quarantine "/Applications/Alacritty.app"
 mkdir -p ~/.config/alacritty
 cp ~/.local/share/omakub-mac/configs/alacritty.toml ~/.config/alacritty/alacritty.toml
 cp ~/.local/share/omakub-mac/configs/alacritty/shared.toml ~/.config/alacritty/shared.toml
