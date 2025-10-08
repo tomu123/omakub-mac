@@ -16,5 +16,3 @@ cp ~/.local/share/omakub-mac/configs/alacritty/font-size.toml ~/.config/alacritt
 alacritty migrate 2>/dev/null || true
 alacritty migrate -c ~/.config/alacritty/pane.toml 2>/dev/null || true
 alacritty migrate -c ~/.config/alacritty/btop.toml 2>/dev/null || true
-
-source ~/.local/share/omakub-mac/install/desktop/set-alacritty-default.sh
