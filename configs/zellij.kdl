@@ -1,5 +1,4 @@
 default_shell "zsh"
-default_shell_args ["--login"]
 
 theme "tokyo-night"
 default_layout "compact"
