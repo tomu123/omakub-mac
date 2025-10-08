@@ -1,10 +1,6 @@
-if type znap &>/dev/null; then
-  znap source ~/.local/share/omakub-mac/defaults/zsh/shell
-else
-  source ~/.local/share/omakub-mac/defaults/zsh/shell
-fi
-znap source ~/.local/share/omakub-mac/defaults/zsh/aliases
-znap source ~/.local/share/omakub-mac/defaults/zsh/functions
-znap source ~/.local/share/omakub-mac/defaults/zsh/prompt
-znap source ~/.local/share/omakub-mac/defaults/zsh/init
-znap source ~/.local/share/omakub-mac/defaults/zsh/input
+source ~/.local/share/omakub-mac/defaults/zsh/shell
+source ~/.local/share/omakub-mac/defaults/zsh/aliases
+source ~/.local/share/omakub-mac/defaults/zsh/functions
+source ~/.local/share/omakub-mac/defaults/zsh/prompt
+source ~/.local/share/omakub-mac/defaults/zsh/init
+source ~/.local/share/omakub-mac/defaults/zsh/input

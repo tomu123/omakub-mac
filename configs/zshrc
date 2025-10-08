@@ -1,8 +1,4 @@
-if type znap &>/dev/null; then
-  znap source ~/.local/share/omakub-mac/defaults/zsh/rc
-else
-  source ~/.local/share/omakub-mac/defaults/zsh/rc
-fi
+source ~/.local/share/omakub-mac/defaults/zsh/rc
 
 # Editor used by CLI
 export EDITOR="nvim"
