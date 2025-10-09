@@ -1,4 +1,13 @@
-# Simple prompt with path in the window/pane title and caret for typing line
+# Simple prompt with path in the window/pane title and caret for typing line unless inside git repo where git branch is shown
+
+# For git branch in prompt
+autoload -Uz vcs_info
+precmd () { vcs_info }
+zstyle ':vcs_info:*' enable git
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats ' on '$'\ue725 ''%b'
+
+# Prompt
 PS1=$'\uf0a9 '
-PS1=$'\e]0;%~\a'"$PS1"
+PS1=$'%{\e]0;%~${vcs_info_msg_0_}\a%}'"$PS1"
 znap prompt
