@@ -3,10 +3,6 @@ znap source Aloxaf/fzf-tab
 znap source jeffreytse/zsh-vi-mode
 znap source zdharma-continuum/fast-syntax-highlighting
 
-# Plugin configs
-ZVM_SYSTEM_CLIPBOARD_ENABLED=true
-
-
 # Tool integrations
 if command -v mise &> /dev/null; then
   znap eval mise "mise activate zsh"
@@ -16,6 +12,8 @@ if command -v zoxide &> /dev/null; then
   znap eval zoxide "zoxide init zsh"
 fi
 
+# FZF integration - DEFERRED after zsh-vi-mode
 if command -v fzf &> /dev/null; then
-  source <(fzf --zsh)
+  # Hook into zsh-vi-mode's init process
+  zvm_after_init_commands+=('znap eval fzf "fzf --zsh"')
 fi

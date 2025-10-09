@@ -31,6 +31,15 @@ select-word-style bash
 # Enable colored completion listings
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
+# Be more intelligent with autocompletion (skip completed text)
+setopt COMPLETE_IN_WORD
+
+# Ensure proper encoding (UTF-8) support
+export LANG=en_US.UTF-8
+
+# Plugin configs
+
+#fzf-tab configs
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
 
@@ -42,7 +51,7 @@ zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' menu no
 
 # preview directory's content with eza when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza -1 --color=always $realpath'
 
 # custom fzf flags
 # NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
@@ -55,8 +64,6 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
-# Be more intelligent with autocompletion (skip completed text)
-setopt COMPLETE_IN_WORD
-
-# Ensure proper encoding (UTF-8) support
-export LANG=en_US.UTF-8
+# zsh-vi-mode configs
+# Enable system clipboard integration(copy)
+ZVM_SYSTEM_CLIPBOARD_ENABLED=true
