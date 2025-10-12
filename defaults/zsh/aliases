@@ -13,7 +13,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # Tools
-n() { if [ "$#" -eq 0 ]; then nvim .; else nvim "$@"; fi; }
+n() { if [ "$#" -eq 1 ] && [ -d "$1" ]; then cd "$1" && nvim .; elif [ "$#" -eq 0 ]; then nvim .; else nvim "$@"; fi; }
 alias g='git'
 alias d='docker'
 alias r='rails'
