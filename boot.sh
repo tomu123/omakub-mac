@@ -29,8 +29,8 @@ fi
 
 # Install brew if not already installed
 if ! command -v brew &>/dev/null; then
-	echo "Installing Homebrew..."
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 brew update >/dev/null
 
@@ -41,9 +41,9 @@ echo "Cloning Omakub-mac..."
 rm -rf ~/.local/share/omakub-mac
 git clone https://github.com/tomu123/omakub-mac.git ~/.local/share/omakub-mac >/dev/null
 if [[ $OMAKUB_MAC_REF != "master" ]]; then
-	cd ~/.local/share/omakub-mac
-	git fetch origin "${OMAKUB_MAC_REF:-master}" && git checkout "${OMAKUB_MAC_REF:-master}"
-	cd -
+  cd ~/.local/share/omakub-mac
+  git fetch origin "${OMAKUB_MAC_REF:-master}" && git checkout "${OMAKUB_MAC_REF:-master}"
+  cd -
 fi
 
 echo "Installation starting..."

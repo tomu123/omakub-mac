@@ -24,4 +24,7 @@ if [ ! -d "$HOME/.config/nvim" ]; then
 
   # Ensure editor.neo-tree is used by default
   cp ~/.local/share/omakub-mac/configs/neovim/lazyvim.json ~/.config/nvim/
+
+  # Ensure Ruby LSP is enabled by default
+  cp ~/.local/share/omakub-mac/configs/neovim/ruby-lsp.lua ~/.config/nvim/lua/plugins/
 fi

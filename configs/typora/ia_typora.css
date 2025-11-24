@@ -48,7 +48,7 @@ body {
 }
 
 #write {
-	/* size of writing area: */
+  /* size of writing area: */
   padding-left: var(--document-padding-x);
   padding-right: var(--document-padding-x);
   max-width: var(--main-content-max-width);
@@ -109,7 +109,7 @@ h4 {
 }
 
 h6 {
-  color: var(--control-text-color);	
+  color: var(--control-text-color);  
 }
 
 h1::before,
@@ -304,6 +304,6 @@ a {
 }
 
 #write div.md-toc-tooltip {
-	background-color: var(--background-color);
+  background-color: var(--background-color);
 }
 
