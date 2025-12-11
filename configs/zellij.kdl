@@ -87,6 +87,8 @@ keybinds clear-defaults=true {
         bind "n" { MovePane; }
         bind "p" { MovePaneBackwards; }
         bind "Tab" { MovePane; }
+        bind "Alt Left" { MoveTab "left"; }
+        bind "Alt Right" { MoveTab "right"; }
     }
     scroll {
         bind "Alt Left" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
@@ -144,15 +146,9 @@ keybinds clear-defaults=true {
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
         bind "Alt f" { ToggleFloatingPanes; }
-        bind "Alt h" { MoveFocusOrTab "left"; }
-        bind "Alt i" { MoveTab "left"; }
-        bind "Alt j" { MoveFocus "down"; }
-        bind "Alt k" { MoveFocus "up"; }
-        bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
         bind "Alt t" { NewTab; }
         bind "Alt x" { CloseFocus; SwitchToMode "locked"; }
-        bind "Alt o" { MoveTab "right"; }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl g" { SwitchToMode "locked"; }
